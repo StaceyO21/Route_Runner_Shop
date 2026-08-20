@@ -1,111 +1,279 @@
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
-
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+/* Contact page form section */
+.form-section {
+  max-width: 850px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #f4f4f4;
+  border-radius: 12px;
+  border: 2px solid #222;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
-}
-
-body {
-  margin: 0;
-}
-
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
+/* Section title above the form */
+.form-section .section-title {
   text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+/* Paragraph above the form */
+.form-section p {
+  text-align: center;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+/* Main form layout */
+#webForm {
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
+  gap: 25px;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+/* Groups each section of the form */
+.form-fieldset {
+  border: 2px solid #333;
+  border-radius: 10px;
+  padding: 25px;
+  background-color: #ffffff;
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
+/* Fieldset titles */
+.form-fieldset legend {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #111;
+  padding: 0 10px;
 }
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
+
+/* Removes bullets from form lists */
+.form-list {
+  list-style-type: none;
   margin: 0;
+  padding: 0;
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+/* Adds spacing between each form row */
+.form-list li {
+  margin-bottom: 18px;
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+/* Label styling */
+#webForm label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #222;
+}
+
+/* Text inputs, email, phone, dropdown, and textarea */
+#webForm input[type="text"],
+#webForm input[type="email"],
+#webForm input[type="tel"],
+#webForm select,
+#webForm textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #777;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+/* Adds focus effect when a user clicks into a form control */
+#webForm input[type="text"]:focus,
+#webForm input[type="email"]:focus,
+#webForm input[type="tel"]:focus,
+#webForm select:focus,
+#webForm textarea:focus {
+  outline: none;
+  border-color: #111;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Radio and checkbox labels should sit beside the input */
+#webForm input[type="radio"],
+#webForm input[type="checkbox"] {
+  width: auto;
+  margin-right: 8px;
+}
+
+/* Radio and checkbox list spacing */
+#mailing-list-fieldset .form-list li,
+#contact-type-fieldset .form-list li {
+  margin-bottom: 12px;
+}
+
+/* Makes radio and checkbox labels display neatly */
+#mailing-list-fieldset label,
+#contact-type-fieldset label {
+  display: flex;
+  align-items: center;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+
+/* Message box resize */
+#webForm textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Button container */
+.form-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+/* Reset and submit buttons */
+.form-buttons button {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Reset button */
+#reset-button {
+  background-color: #777;
+  color: white;
+}
+
+/* Submit button */
+#submit-button {
+  background-color: #222;
+  color: white;
+}
+
+/* Button hover effects */
+#reset-button:hover {
+  background-color: #555;
+}
+
+#submit-button:hover {
+  background-color: #000;
+}
+
+/* Responsive form layout for smaller screens */
+@media screen and (max-width: 600px) {
+  .form-section {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .form-fieldset {
+    padding: 18px;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+  }
+
+  .form-buttons button {
+    width: 100%;
+  }
+
+  /* Form results section */
+.form-results {
+  max-width: 850px;
+  margin: 30px auto 0;
+  padding: 25px;
+  background-color: #ffffff;
+  border: 2px solid #222;
+  border-radius: 10px;
+}
+
+/* Results heading */
+.form-results h3 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+/* Results text */
+#resultsOutput p {
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+/* Field-level error messages */
+.error-message {
+  display: block;
+  margin-top: 5px;
+  color: #b00020;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+/* Overall success message */
+.success-message {
+  display: block;
+  margin-top: 10px;
+  color: #2e7d32;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Overall form result message area */
+#form-result-message {
+  margin-top: 15px;
+  text-align: center;
+}
+
+/* Invalid fields */
+#webForm input:invalid,
+#webForm select:invalid,
+#webForm textarea:invalid {
+  border: 2px solid #b00020;
+}
+
+/* Valid fields */
+#webForm input:valid,
+#webForm select:valid,
+#webForm textarea:valid {
+  border: 2px solid #2e7d32;
+}
+/* Weather status message area */
+.weather-status {
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Weather results display area */
+.weather-results {
+  margin-top: 20px;
+  padding: 20px;
+  border: 2px solid #222;
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+
+/* Weather results heading */
+.weather-results h3 {
+  margin-top: 0;
+  text-align: center;
+}
+
+/* Error messages */
+.error-message {
+  display: block;
+  margin-top: 5px;
+  color: #b00020;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* Success messages */
+.success-message {
+  color: #2e7d32;
+}
 }
